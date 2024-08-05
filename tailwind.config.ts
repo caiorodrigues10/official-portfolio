@@ -19,6 +19,12 @@ const config: Config = {
           text: "#D7D7D7",
         },
       },
+      backgroundImage: {
+        "text-slider-dark":
+          "linear-gradient(to right, #5F5F5F 0, rgb(0, 0, 0) 10%, #5F5F5F 20%)",
+        "text-slider-light":
+          "linear-gradient(to right, #5F5F5F 0, rgb(255, 255, 255) 10%, #5F5F5F 20%)",
+      },
     },
   },
   plugins: [],

@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=BenchNine:wght@300;400;700&family=Gruppo&family=Marcellus&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syncopate:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=BenchNine:wght@300;400;700&family=Gruppo&family=Marcellus&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syncopate:wght@400;700&display=swap");
 
 @layer utilities {
   .text-balance {
@@ -12,55 +11,55 @@
 
 @layer base {
   @font-face {
-    font-family: 'Supply';
+    font-family: "Supply";
     font-style: normal;
     font-weight: 200;
     src: url(/fonts/Supply-UltraLight.otf);
   }
   @font-face {
-    font-family: 'Supply';
+    font-family: "Supply";
     font-style: normal;
     font-weight: 300;
     src: url(/fonts/Supply-Light.otf);
   }
   @font-face {
-    font-family: 'Supply';
+    font-family: "Supply";
     font-style: normal;
     font-weight: 400;
     src: url(/fonts/Supply-Regular.otf);
   }
   @font-face {
-    font-family: 'Supply';
+    font-family: "Supply";
     font-style: normal;
     font-weight: 500;
     src: url(/fonts/Supply-Medium.otf);
   }
   @font-face {
-    font-family: 'Supply';
+    font-family: "Supply";
     font-style: normal;
     font-weight: 600;
     src: url(/fonts/Supply-Bold.otf);
   }
   @font-face {
-    font-family: 'Gruppo';
+    font-family: "Gruppo";
     font-style: normal;
     font-weight: 400;
     src: url(/fonts/Gruppo-Regular.ttf);
   }
   @font-face {
-    font-family: 'Benchnine';
+    font-family: "Benchnine";
     font-style: normal;
     font-weight: 300;
     src: url(/fonts/Benchnine-Light.ttf);
   }
   @font-face {
-    font-family: 'Benchnine';
+    font-family: "Benchnine";
     font-style: normal;
     font-weight: 400;
     src: url(/fonts/Benchnine-Regular.ttf);
   }
   @font-face {
-    font-family: 'Benchnine';
+    font-family: "Benchnine";
     font-style: normal;
     font-weight: 600;
     src: url(/fonts/Benchnine-Bold.ttf);
@@ -143,4 +142,85 @@
   white-space: nowrap;
   display: flex;
   flex-wrap: nowrap;
+}
+
+.link-technologies {
+  @apply benchnine-regular text-2xl items-center whitespace-nowrap hover:text-sky-500 duration-200 h-fit;
+}
+
+.bg-slider-light {
+  background: linear-gradient(to right, #5f5f5f 0, white 10%, #5f5f5f 20%);
+}
+
+.bg-slider-dark {
+  background: linear-gradient(to right, #5f5f5f 0, black 10%, #5f5f5f 20%);
+}
+
+.btn-shine {
+  @apply text-black dark:bg-text-slider-light bg-text-slider-dark;
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200px;
+  }
+  100% {
+    background-position: 200px;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink-caret 0.75s step-start infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.text-focus-in {
+	animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.tracking-in-expand {
+	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
