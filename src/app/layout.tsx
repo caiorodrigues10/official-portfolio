@@ -20,7 +20,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <NextIntlClientProvider messages={messages}>
-        <body className="bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text">
+        <body className="bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text scrollbar-show-hover">
           <Navbar />
 
           {children}

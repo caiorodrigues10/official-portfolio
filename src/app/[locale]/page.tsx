@@ -1,36 +1,39 @@
-import { ParallaxText } from "@/components/parallaxText";
+import Link from "next/link";
 import TypeEffect from "@/components/typingEffect";
+import { ParallaxText } from "@/components/parallaxText";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import Image from "next/image";
+import DistortText from "@/components/distortText";
+import TiltComponent from "@/components/tilt";
 
 export default function Home() {
   const t = useTranslations("main");
 
   return (
-    <main className="flex flex-col px-40">
-      <section className="flex w-full gap-12 py-32 justify-between">
-        <div className="flex flex-col gap-4 w-1/2 typing-container">
-          <h1 className="text-8xl almarai-extrabold text-focus-in ">
+    <main className="flex flex-col px-40 max-xl:px-12 max-md:px-6 pb-40">
+      <section className="flex w-full gap-12 max-xl:gap-8 py-32 justify-between max-lg:justify-normal max-md:flex-col">
+        <div className="flex flex-col gap-4 w-1/2 typing-container max-md:w-full">
+          <h1 className="text-8xl almarai-extrabold text-focus-in max-lg:text-6xl max-sm:text-4xl">
             CAIO HENRIQUE RODRIGUES
           </h1>
-          <h1 className="text-5xl almarai-extrabold tracking-in-expand text-wrap">
+          <h1 className="text-5xl almarai-extrabold tracking-in-expand text-wrap max-lg:text-3xl max-sm:text-2xl">
             {t("profession") === "DEVELOPER" && (
-              <span className="text-sky-500">FULL-STACK&nbsp;</span>
-            )}
-            {t("profession")}
+              <DistortText className="text-sky-500">FULL-STACK</DistortText>
+            )}{" "}
+            {t("profession")}{" "}
             {t("profession") === "DESENVOLVEDOR" && (
-              <span className="text-sky-500">&nbsp;FULL-STACK</span>
+              <DistortText className="text-sky-500">FULL-STACK</DistortText>
             )}
           </h1>
           <TypeEffect
             speed={100}
             text={t("message")}
             as={"h3"}
-            className="text-3xl gruppo-regular text-[#5F5F5F]"
+            className="text-3xl max-lg:text-xl gruppo-regular text-[#5F5F5F]"
           />
         </div>
-        <div className="flex flex-col gap-4 text-[#5F5F5F] w-1/3">
+        <div className="flex flex-col gap-4 text-[#5F5F5F] w-1/3 max-lg:w-1/2 max-md:w-full">
           <div className="flex flex-col marcellus-regular gap-1 btn-shine">
             <p>UI/UX</p>
             <p>{t("developer")}</p>
@@ -74,7 +77,7 @@ export default function Home() {
             <p className="marcellus-regular">{t("technologies")}</p>
             <div className="flex gap-4 relative">
               <div className="absolute z-10 h-full w-16 bg-gradient-to-l from-transparent dark:to-[#110f0f] to-white/90" />
-              <ParallaxText baseVelocity={1}>
+              <ParallaxText baseVelocity={0.2}>
                 <div className="flex w-full gap-4">
                   <Link
                     href="https://react.dev/"
@@ -187,6 +190,39 @@ export default function Home() {
               <div className="absolute right-0 z-10 h-full w-24 bg-gradient-to-r from-transparent dark:to-[#110f0f] to-white/90" />
             </div>
           </div>
+        </div>
+      </section>
+      <section className="flex w-full flex-col gap-12">
+        <h1 className="text-5xl text-center text-[#D7D7D7] syncopate-bold">
+          {t("aboutTitle")}
+        </h1>
+        <div className="flex gap-24 items-center relative">
+          <TiltComponent>
+            <p className="text-3xl marcellus-regular text-[#7d7d7d]">
+              {t("aboutMe")}
+            </p>
+          </TiltComponent>
+          <Image
+            src={"/me.png"}
+            width={700}
+            height={200}
+            alt=""
+            className="rounded-3xl"
+          />
+          <Image
+            src={"/paint.svg"}
+            width={300}
+            height={200}
+            alt=""
+            className="absolute top-0 -right-32 -z-10"
+          />
+          <Image
+            src={"/paint.svg"}
+            width={300}
+            height={200}
+            alt=""
+            className="absolute -bottom-24 right-1/4 -z-10"
+          />
         </div>
       </section>
     </main>
