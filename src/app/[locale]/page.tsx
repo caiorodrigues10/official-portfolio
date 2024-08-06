@@ -1,11 +1,12 @@
 import Link from "next/link";
 import TypeEffect from "@/components/typingEffect";
 import { ParallaxText } from "@/components/parallaxText";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { ArrowRight, SquareArrowOutUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import DistortText from "@/components/distortText";
 import TiltComponent from "@/components/tilt";
+import { CardProject } from "@/components/cardProjects";
 
 export default function Home() {
   const t = useTranslations("main");
@@ -193,10 +194,10 @@ export default function Home() {
         </div>
       </section>
       <section className="flex w-full flex-col gap-12">
-        <h1 className="text-5xl text-center text-[#D7D7D7] syncopate-bold">
+        <h1 className="text-5xl text-[#D7D7D7] syncopate-bold">
           {t("aboutTitle")}
         </h1>
-        <div className="flex gap-24 items-center relative">
+        <div className="flex gap-24 items-start relative">
           <TiltComponent>
             <p className="text-3xl marcellus-regular text-[#7d7d7d]">
               {t("aboutMe")}
@@ -223,6 +224,81 @@ export default function Home() {
             alt=""
             className="absolute -bottom-24 right-1/4 -z-10"
           />
+        </div>
+      </section>
+      <section className="flex w-full flex-col gap-12 mt-32">
+        <h1 className="text-5xl text-center text-[#D7D7D7] syncopate-bold">
+          {t("project")}
+        </h1>
+        <div className="grid grid-cols-3 gap-12">
+          <div className="col-span-2 flex gap-12 flex-col h-full">
+            <CardProject.Root>
+              <Image
+                src="/new-xp.svg"
+                width={310}
+                height={300}
+                alt=""
+                className={
+                  "border-r border-zinc-300 dark:border-zinc-800 h-full object-cover"
+                }
+              />
+              <CardProject.Content>
+                <CardProject.Title>NEW XP</CardProject.Title>
+                <p className="text-xl marcellus-regular text-[#7d7d7d]">
+                  É um relógio de Pomodoro criado para desenvolvedores e
+                  estudantes, quando o cronometro é zerado é gerado um exercício
+                  básico para realizar após longos períodos na frente de um
+                  computador.
+                </p>
+                <CardProject.Button>{t("viewProject")}</CardProject.Button>
+              </CardProject.Content>
+            </CardProject.Root>
+
+            <CardProject.Root>
+              <CardProject.Content>
+                <CardProject.Title>BARBER PASS</CardProject.Title>
+                <p className="text-xl marcellus-regular text-[#7d7d7d]">
+                  É um projeto focado em gerar senhas a longa distância para
+                  barbeiros e cabeleleiras, ele gera uma senha para marcar seu
+                  lugar na fila, assim o profissional consegue trabalhar com
+                  horário de chegada mais fácil sem problemas com pessoas fora
+                  da fila
+                </p>
+                <CardProject.Button>{t("viewProject")}</CardProject.Button>
+              </CardProject.Content>
+              <Image
+                src="/barber-pass.svg"
+                width={310}
+                height={300}
+                alt=""
+                className={
+                  "border-l border-zinc-300 dark:border-zinc-800 h-full object-cover"
+                }
+              />
+            </CardProject.Root>
+          </div>
+          <CardProject.Root className="flex-col">
+            <Image
+              src="/project-2c.svg"
+              width={910}
+              height={300}
+              alt=""
+              className={"border-l border-zinc-300 dark:border-zinc-800 h-fit"}
+            />
+            <CardProject.Content className="h-full">
+              <CardProject.Title>BARBER PASS</CardProject.Title>
+              <div className="flex flex-col justify-between gap-8 h-full">
+                <p className="text-xl marcellus-regular text-[#7d7d7d]">
+                  É um projeto focado em gerar senhas a longa distância para
+                  barbeiros e cabeleleiras, ele gera uma senha para marcar seu
+                  lugar na fila, assim o profissional consegue trabalhar com
+                  horário de chegada mais fácil sem problemas com pessoas fora
+                  da fila
+                </p>
+                <CardProject.Button>{t("viewProject")}</CardProject.Button>
+              </div>
+            </CardProject.Content>
+          </CardProject.Root>
         </div>
       </section>
     </main>

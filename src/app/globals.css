@@ -300,5 +300,26 @@
 
 
 
+.effect-3 {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
 
+.effect-3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: rgb(14 165 233); 
+  transform: translateX(-100%);
+  transition: transform 0.3s ease; 
+}
 
+.effect-3:hover::before {
+  transform: translateX(0);
+}
