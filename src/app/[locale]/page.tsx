@@ -7,6 +7,7 @@ import Image from "next/image";
 import DistortText from "@/components/distortText";
 import TiltComponent from "@/components/tilt";
 import { CardProject } from "@/components/cardProjects";
+import Carousel from "@/components/carousel";
 
 export default function Home() {
   const t = useTranslations("main");
@@ -230,7 +231,7 @@ export default function Home() {
         <h1 className="text-5xl text-center text-[#D7D7D7] syncopate-bold">
           {t("project")}
         </h1>
-        <div className="grid grid-cols-3 gap-12">
+        {/* <div className="grid grid-cols-3 gap-12">
           <div className="col-span-2 flex gap-12 flex-col h-full">
             <CardProject.Root>
               <Image
@@ -245,10 +246,7 @@ export default function Home() {
               <CardProject.Content>
                 <CardProject.Title>NEW XP</CardProject.Title>
                 <p className="text-xl marcellus-regular text-[#7d7d7d]">
-                  É um relógio de Pomodoro criado para desenvolvedores e
-                  estudantes, quando o cronometro é zerado é gerado um exercício
-                  básico para realizar após longos períodos na frente de um
-                  computador.
+                  {t("newXp")}
                 </p>
                 <CardProject.Button>{t("viewProject")}</CardProject.Button>
               </CardProject.Content>
@@ -258,11 +256,7 @@ export default function Home() {
               <CardProject.Content>
                 <CardProject.Title>BARBER PASS</CardProject.Title>
                 <p className="text-xl marcellus-regular text-[#7d7d7d]">
-                  É um projeto focado em gerar senhas a longa distância para
-                  barbeiros e cabeleleiras, ele gera uma senha para marcar seu
-                  lugar na fila, assim o profissional consegue trabalhar com
-                  horário de chegada mais fácil sem problemas com pessoas fora
-                  da fila
+                  {t("barberPass")}
                 </p>
                 <CardProject.Button>{t("viewProject")}</CardProject.Button>
               </CardProject.Content>
@@ -286,20 +280,25 @@ export default function Home() {
               className={"border-l border-zinc-300 dark:border-zinc-800 h-fit"}
             />
             <CardProject.Content className="h-full">
-              <CardProject.Title>BARBER PASS</CardProject.Title>
+              <CardProject.Title>PROJECT 2C</CardProject.Title>
               <div className="flex flex-col justify-between gap-8 h-full">
                 <p className="text-xl marcellus-regular text-[#7d7d7d]">
-                  É um projeto focado em gerar senhas a longa distância para
-                  barbeiros e cabeleleiras, ele gera uma senha para marcar seu
-                  lugar na fila, assim o profissional consegue trabalhar com
-                  horário de chegada mais fácil sem problemas com pessoas fora
-                  da fila
+                  {t("project2C")}
                 </p>
                 <CardProject.Button>{t("viewProject")}</CardProject.Button>
               </div>
             </CardProject.Content>
           </CardProject.Root>
-        </div>
+        </div> */}
+        <Carousel
+          items={[
+            { src: "teste", subTitle: "teste", title: "teste" },
+            { src: "teste", subTitle: "teste", title: "teste" },
+            { src: "teste", subTitle: "teste", title: "teste" },
+            { src: "teste", subTitle: "teste", title: "teste" },
+            { src: "teste", subTitle: "teste", title: "teste" },
+          ]}
+        />
       </section>
     </main>
   );
