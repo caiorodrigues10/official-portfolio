@@ -1,16 +1,46 @@
-import Link from "next/link";
-import TypeEffect from "@/components/typingEffect";
+import Carousel, { ItemsProps } from "@/components/carousel";
+import DistortText from "@/components/distortText";
 import { ParallaxText } from "@/components/parallaxText";
-import { ArrowRight, SquareArrowOutUpRight } from "lucide-react";
+import TiltComponent from "@/components/tilt";
+import TypeEffect from "@/components/typingEffect";
+import { SquareArrowOutUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import DistortText from "@/components/distortText";
-import TiltComponent from "@/components/tilt";
-import { CardProject } from "@/components/cardProjects";
-import Carousel from "@/components/carousel";
+import Link from "next/link";
 
 export default function Home() {
   const t = useTranslations("main");
+
+  const itemsCarousel = [
+    {
+      description: t("project2C"),
+      src: "project-2c.svg",
+      subTitle: t("project2CSub"),
+      title: "Project 2C",
+      href: "https://project-2-c-web.vercel.app/home",
+    },
+    {
+      description: t("high"),
+      src: "high.svg",
+      subTitle: t("highSub"),
+      title: "High Booster",
+      href: "https://lading-high.vercel.app/home",
+    },
+    {
+      description: t("barberPass"),
+      src: "barber-pass.svg",
+      subTitle: t("barberPassSub"),
+      title: "Barber Pass",
+      href: "https://barber-pass.vercel.app/home",
+    },
+    {
+      description: t("newXp"),
+      src: "new-xp.svg",
+      subTitle: t("newXpSub"),
+      title: "New XP",
+      href: "https://newxp-next.vercel.app/",
+    },
+  ] as ItemsProps[];
 
   return (
     <main className="flex flex-col px-40 max-xl:px-12 max-md:px-6 pb-40">
@@ -231,74 +261,7 @@ export default function Home() {
         <h1 className="text-5xl text-center text-[#D7D7D7] syncopate-bold">
           {t("project")}
         </h1>
-        {/* <div className="grid grid-cols-3 gap-12">
-          <div className="col-span-2 flex gap-12 flex-col h-full">
-            <CardProject.Root>
-              <Image
-                src="/new-xp.svg"
-                width={310}
-                height={300}
-                alt=""
-                className={
-                  "border-r border-zinc-300 dark:border-zinc-800 h-full object-cover"
-                }
-              />
-              <CardProject.Content>
-                <CardProject.Title>NEW XP</CardProject.Title>
-                <p className="text-xl marcellus-regular text-[#7d7d7d]">
-                  {t("newXp")}
-                </p>
-                <CardProject.Button>{t("viewProject")}</CardProject.Button>
-              </CardProject.Content>
-            </CardProject.Root>
-
-            <CardProject.Root>
-              <CardProject.Content>
-                <CardProject.Title>BARBER PASS</CardProject.Title>
-                <p className="text-xl marcellus-regular text-[#7d7d7d]">
-                  {t("barberPass")}
-                </p>
-                <CardProject.Button>{t("viewProject")}</CardProject.Button>
-              </CardProject.Content>
-              <Image
-                src="/barber-pass.svg"
-                width={310}
-                height={300}
-                alt=""
-                className={
-                  "border-l border-zinc-300 dark:border-zinc-800 h-full object-cover"
-                }
-              />
-            </CardProject.Root>
-          </div>
-          <CardProject.Root className="flex-col">
-            <Image
-              src="/project-2c.svg"
-              width={910}
-              height={300}
-              alt=""
-              className={"border-l border-zinc-300 dark:border-zinc-800 h-fit"}
-            />
-            <CardProject.Content className="h-full">
-              <CardProject.Title>PROJECT 2C</CardProject.Title>
-              <div className="flex flex-col justify-between gap-8 h-full">
-                <p className="text-xl marcellus-regular text-[#7d7d7d]">
-                  {t("project2C")}
-                </p>
-                <CardProject.Button>{t("viewProject")}</CardProject.Button>
-              </div>
-            </CardProject.Content>
-          </CardProject.Root>
-        </div> */}
-        <Carousel
-          items={[
-            { src: "teste", subTitle: "teste", title: "teste" },
-            { src: "teste", subTitle: "teste", title: "teste" },
-            { src: "teste", subTitle: "teste", title: "teste" },
-            { src: "teste", subTitle: "teste", title: "teste" },
-            { src: "teste", subTitle: "teste", title: "teste" },
-          ]}
-        />
+        <Carousel items={itemsCarousel} />
       </section>
     </main>
   );

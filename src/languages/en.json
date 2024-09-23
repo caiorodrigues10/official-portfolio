@@ -1,18 +1,24 @@
 {
   "main": {
     "profession": "DEVELOPER",
-    "message": "Turning ideas into code and dreams into reality.",
+    "message": "Transforming ideas into code and dreams into reality.",
     "developer": "DEVELOPER",
-    "webDesign": "WEB DESIGN",
+    "webDesign": "WEB DESIGNER",
     "softwareArchitect": "SOFTWARE ARCHITECT",
     "social": "SOCIAL MEDIA",
     "technologies": "TECHNOLOGIES",
     "aboutTitle": "ABOUT ME",
     "project": "PROJECTS",
-    "viewProject":"VIEW PROJECT",
-    "aboutMe": "Pleasure, I'm Caio Henrique Rodrigues, a 22-year-old full-stack developer, currently in my final year of Information Systems at Universidade Unifafibe. My initial training in Systems Development at Etec Bebedouro gave me a solid foundation in area. I am looking for opportunities to expand my knowledge and face new challenges. My passion for technology and innovation drives me to seek creative and high-quality solutions. my skills and deliver a meaningful impact.",
-    "project2C": "Project 2C is an innovative idea in combating fraud, it is the integration of an open source biometric engine made with Rust, it has the ability to compare faces and score the similarity between compared faces.",
-    "barberPass": "It is a project focused on generating long-distance passwords for barbers and hairdressers, it generates a password to mark their place in the queue, so the professional can work with an easier arrival time without problems with people outside the queue" ,
-    "newXp": "It's a Pomodoro clock created for developers and students. When the timer is reset, a basic exercise is generated to perform after long periods in front of a computer."
+    "viewProject": "VIEW PROJECT",
+    "aboutMe": "Nice to meet you, I'm Caio Henrique Rodrigues, a 22-year-old full-stack developer. I am currently in my final year of Information Systems at Unifafibe University. My initial education in Systems Development at Etec Bebedouro provided me with a solid foundation in the field. I am seeking opportunities to expand my knowledge and face new challenges. My passion for technology and innovation drives me to pursue creative and high-quality solutions. Currently, I work as a full-stack developer and I am eager to contribute to projects that challenge my skills and provide a significant impact on our society.",
+    "project2C": "The 2C Project is an innovative idea in combating fraud. It is the integration of an open-source biometric engine made with Rust, which has the ability to compare faces and score the similarity between compared faces.",
+    "project2CSub": "Biometric engine",
+    "barberPass": "This is a project focused on generating passwords remotely for barbers and hairdressers. It generates a password to reserve your place in line, allowing the professional to manage arrival times more easily without issues with people outside the queue.",
+    "barberPassSub": "Barbershop queue app",
+    "newXp": "This is a Pomodoro timer created for developers and students. When the timer reaches zero, a basic exercise is generated to perform after long periods in front of a computer.",
+    "newXpSub": "Pomodoro timer",
+    "high": "A project aimed at people who want to improve or rank up in the game League of Legends. The project includes a complete admin panel and a modern, attractive design.",
+    "highSub": "Elo Job E-commerce",
+    "viewWebsite": "View website"
   }
 }

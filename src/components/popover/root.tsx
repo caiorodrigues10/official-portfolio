@@ -20,7 +20,7 @@ interface PopoverData {
   popoverRef: MutableRefObject<HTMLDivElement | null>;
   position: "bottomLeft" | "bottomCenter" | "bottomRight" | "leftTop";
   visible: boolean;
-  onHandlePopover: (args: any) => void;
+  onHandlePopover: () => void;
 }
 
 const PopoverContext = createContext<PopoverData | undefined>(undefined);
@@ -55,8 +55,8 @@ export function PopoverRoot({ children, className }: PopoverRootProps) {
     };
   }, []);
 
-  const onHandlePopover = (args: any) => {
-    // Adicionar lógica para manipular o popover
+  const onHandlePopover = () => {
+    setVisible((e) => !e);
   };
 
   return (

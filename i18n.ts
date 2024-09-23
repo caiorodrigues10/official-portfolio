@@ -1,12 +1,17 @@
-import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
+import { cookies } from "next/headers";
 
-const locales = ["en", "pt-br"];
+const supportedLocales = ["en", "pt-br"];
 
-export default getRequestConfig(async ({ locale }) => {
-  if (!locales.includes(locale as any)) notFound();
+export default getRequestConfig(async () => {
+  const cookieLocale = cookies().get("locale")?.value;
+
+  const locale = supportedLocales.includes(cookieLocale || "")
+    ? cookieLocale
+    : "pt-br";
 
   return {
+    locale,
     messages: (await import(`./src/languages/${locale}.json`)).default,
   };
 });

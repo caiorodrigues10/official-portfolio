@@ -21,13 +21,11 @@ function TiltComponent({ children, className }: TiltComponentProps) {
     const xVal = clientX - rect.left;
     const yVal = clientY - rect.top;
 
-    const maxRotation = 10; // Define a rotação máxima em graus
+    const maxRotation = 10;
 
-    // Calcula a rotação com base na posição do mouse
     const yRotation = ((xVal - width / 2) / width) * maxRotation;
     const xRotation = (-(yVal - height / 2) / height) * maxRotation;
 
-    // Aplica a transformação com rotação suave
     el.style.transform = `perspective(500px) scale(1.1) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
   }, []);
 
@@ -39,15 +37,15 @@ function TiltComponent({ children, className }: TiltComponentProps) {
   }, []);
 
   useEffect(() => {
-    // Cleanup on component unmount
+    const el = elRef.current; // Capture the current value of elRef
+
     return () => {
-      const el = elRef.current;
       if (el) {
         el.style.transform =
           "perspective(500px) scale(1) rotateX(0) rotateY(0)";
       }
     };
-  }, []);
+  }, []); // Ensure no dependencies are added here
 
   return (
     <div

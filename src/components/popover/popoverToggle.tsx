@@ -1,14 +1,9 @@
-import { ReactNode } from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { PropsWithChildren } from "react";
+import { usePopoverContext } from "./root";
 
-interface PopoverToggleProps {
-  className?: string;
-  children: ReactNode;
-}
+export function PopoverToggle({ children }: PropsWithChildren) {
+  const { onHandlePopover } = usePopoverContext();
 
-export function PopoverToggle({ children, className }: PopoverToggleProps) {
-  return (
-    <button type="button" className={className}>
-      {children}
-    </button>
-  );
+  return <Slot onClick={onHandlePopover}>{children}</Slot>;
 }
