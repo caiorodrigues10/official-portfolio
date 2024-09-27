@@ -20,15 +20,18 @@ const TypeEffect: React.FC<TypeEffectProps> = ({
     let i = 0;
     let timeoutId: NodeJS.Timeout;
 
+    // Reseta o texto antes de começar a animação
+    setDisplayedText("");
+
     const updateText = () => {
-      if (i < text.length) {
-        setDisplayedText((prev) => prev + text.charAt(i));
+      if (i <= text.length) {
+        setDisplayedText(text.substring(0, i + 1)); // Atualiza o texto até a posição i
         i++;
         timeoutId = setTimeout(updateText, speed);
       }
     };
 
-    updateText();
+    updateText(); // Inicializa a animação imediatamente
 
     return () => {
       clearTimeout(timeoutId);
