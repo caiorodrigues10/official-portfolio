@@ -37,7 +37,7 @@ function TiltComponent({ children, className }: TiltComponentProps) {
   }, []);
 
   useEffect(() => {
-    const el = elRef.current; // Capture the current value of elRef
+    const el = elRef.current;
 
     return () => {
       if (el) {
@@ -45,7 +45,7 @@ function TiltComponent({ children, className }: TiltComponentProps) {
           "perspective(500px) scale(1) rotateX(0) rotateY(0)";
       }
     };
-  }, []); // Ensure no dependencies are added here
+  }, []);
 
   return (
     <div

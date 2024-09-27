@@ -31,11 +31,11 @@ const Carousel = ({ items }: CarouselProps) => {
   };
 
   return (
-    <div className="relative">
+    <div className="flex justify-between">
       {items.map((item, index) => (
         <div
           key={index}
-          className={clsx("carousel-item pb-40", {
+          className={clsx("carousel-item", {
             "active flex": index === current,
           })}
         >

@@ -1,7 +1,10 @@
 import Carousel, { ItemsProps } from "@/components/carousel";
+import { ClientOnly } from "@/components/clientOnly";
 import DistortText from "@/components/distortText";
+import { InfoCookies } from "@/components/infoCookies";
+import Contact from "@/components/page/home/sections/contact";
+import FooterUsefulLinks from "@/components/page/home/sections/footerUsefulLinks";
 import { ParallaxText } from "@/components/parallaxText";
-import TiltComponent from "@/components/tilt";
 import TypeEffect from "@/components/typingEffect";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -42,9 +45,19 @@ export default function Home() {
     },
   ] as ItemsProps[];
 
+  const itemsLink = [
+    { description: t("home"), to: "home" },
+    { description: t("aboutTitle"), to: "about" },
+    { description: t("project"), to: "project" },
+    { description: t("contact"), to: "contact" },
+  ] as {
+    description: string;
+    to: string;
+  }[];
+
   return (
     <main className="flex flex-col px-40 max-xl:px-12 max-md:px-6 pb-40">
-      <section className="flex w-full gap-12 max-xl:gap-8 py-32 justify-between max-lg:justify-normal max-md:flex-col">
+      <section className="flex w-full gap-12 max-xl:gap-8 pt-32 justify-between max-lg:justify-normal max-md:flex-col">
         <div className="flex flex-col gap-4 w-1/2 typing-container max-md:w-full">
           <h1 className="text-8xl almarai-extrabold text-focus-in max-lg:text-6xl max-sm:text-4xl">
             CAIO HENRIQUE RODRIGUES
@@ -62,10 +75,10 @@ export default function Home() {
             speed={100}
             text={t("message")}
             as={"h3"}
-            className="text-3xl max-lg:text-xl gruppo-regular text-[#5F5F5F]"
+            className="text-3xl max-lg:text-xl gruppo-regular text-[#5F5F5F] dark:text-neutral-500"
           />
         </div>
-        <div className="flex flex-col gap-4 text-[#5F5F5F] w-1/3 max-lg:w-1/2 max-md:w-full">
+        <div className="flex flex-col gap-4 text-[#5F5F5F] dark:text-neutral-500 w-1/3 max-lg:w-1/2 max-md:w-full">
           <div className="flex flex-col marcellus-regular gap-1 btn-shine">
             <p>UI/UX</p>
             <p>{t("developer")}</p>
@@ -224,16 +237,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="pt-28" id="about" />
       <section className="flex w-full flex-col gap-12">
-        <h1 className="text-5xl text-[#D7D7D7] syncopate-bold">
+        <h1 className="text-5xl dark:text-[#D7D7D7] syncopate-bold">
           {t("aboutTitle")}
         </h1>
         <div className="flex gap-24 items-start relative">
-          <TiltComponent>
-            <p className="text-3xl marcellus-regular text-[#7d7d7d]">
-              {t("aboutMe")}
-            </p>
-          </TiltComponent>
+          <p className="text-3xl marcellus-regular dark:text-neutral-500">
+            {t("aboutMe")}
+          </p>
+
           <Image
             src={"/me.png"}
             width={700}
@@ -257,12 +270,67 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="flex w-full flex-col gap-12 mt-32">
-        <h1 className="text-5xl text-center text-[#D7D7D7] syncopate-bold">
+      <div id="project" className="pt-32" />
+      <section className="flex w-full flex-col gap-12 relative">
+        <h1 className="text-5xl text-center dark:text-[#D7D7D7] syncopate-bold">
           {t("project")}
         </h1>
         <Carousel items={itemsCarousel} />
       </section>
+      <div id="contact" className="mt-[230px]" />
+      <Contact />
+
+      <footer className="flex w-full gap-12 mt-32">
+        <div className="absolute left-0 right-0 bg-[#0068FF]">
+          <div className="flex w-full h-16 bg-white dark:bg-[#110f0f] rounded-b-full absolute left-0 right-0" />
+          <div className="flex px-40 max-xl:px-12 max-md:px-6 pt-32 pb-40 justify-around text-white">
+            <div className="flex flex-col gap-2">
+              <p className="marcellus-regular">{t("social")}</p>
+              <div className="flex gap-4">
+                <Link
+                  href={
+                    "https://www.linkedin.com/in/caio-henrique-rodrigues-9b155916b/"
+                  }
+                  target="_blank"
+                  className="link-footer text-2xl flex gap-2 items-center"
+                >
+                  LINKEDIN
+                  <SquareArrowOutUpRight size={18} />
+                </Link>
+                <Link
+                  href={"https://github.com/caiorodrigues10"}
+                  target="_blank"
+                  className="link-footer text-2xl flex gap-2 items-center"
+                >
+                  GIT HUB
+                  <SquareArrowOutUpRight size={18} />
+                </Link>
+                <Link
+                  href={"https://www.instagram.com/caio_rodrgues_/"}
+                  target="_blank"
+                  className="link-footer text-2xl flex gap-2 items-center"
+                >
+                  INSTAGRAM
+                  <SquareArrowOutUpRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <p className="marcellus-regular">{t("usefulLinks")}</p>
+              <ClientOnly>
+                <FooterUsefulLinks items={itemsLink} />
+              </ClientOnly>
+            </div>
+          </div>
+          <div className="p-4 border-t border-white text-end text-white gruppo-regular text-xl">
+            Copyright © 2024 Caio Henrique Rodrigues{" "}
+          </div>
+        </div>
+      </footer>
+      <ClientOnly>
+        <InfoCookies buttonTitle={t("accept")} description={t("infoCookies")} />
+      </ClientOnly>
     </main>
   );
 }

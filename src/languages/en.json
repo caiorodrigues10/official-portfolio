@@ -19,6 +19,21 @@
     "newXpSub": "Pomodoro timer",
     "high": "A project aimed at people who want to improve or rank up in the game League of Legends. The project includes a complete admin panel and a modern, attractive design.",
     "highSub": "Elo Job E-commerce",
-    "viewWebsite": "View website"
+    "viewWebsite": "View website",
+    "placeHolderWorkTogether": "Let's work together?",
+    "placeHolderFullName": "Full name",
+    "placeHolderMessage": "Message",
+    "send": "Send",
+    "home": "HOME",
+    "contact": "CONTACT",
+    "usefulLinks": "USEFUL LINKS",
+    "infoCookies": "This website uses cookies to improve your browsing experience and offer personalized content. By continuing to browse, you agree to the use of cookies.",
+    "accept": "Accept",
+    "phoneNumber": "Phone number",
+    "phoneNumberMandatory": "Phone is mandatory",
+    "nameMandatory": "Name is mandatory",
+    "messageMandatory": "Message is mandatory",
+    "sendEmail": "Email sent successfully!",
+    "errorSendEmail": "Error sending email:"
   }
 }

@@ -19,6 +19,21 @@
     "newXpSub": "Relógio de Pomodoro",
     "high": "Um projeto voltado para pessoas que desejam melhorar ou subir de rank no jogo League of Legends, o projeto conta com um painel administrativo completo e um visual moderno e atraente.",
     "highSub": "E-commerce de Elo Job",
-    "viewWebsite": "Ver site"
+    "viewWebsite": "Ver site",
+    "placeHolderWorkTogether": "Vamos trabalhar juntos?",
+    "placeHolderFullName": "Nome completo",
+    "placeHolderMessage": "Mensagem",
+    "send": "Enviar",
+    "home": "PÁGINA INICIAL",
+    "contact": "CONTATO",
+    "usefulLinks": "LINKS ÚTEIS",
+    "infoCookies": "Este site utiliza cookies para melhorar sua experiência de navegação e oferecer conteúdos personalizados. Ao continuar navegando, você concorda com o uso de cookies.",
+    "accept": "Aceitar",
+    "phoneNumber": "Telefone",
+    "phoneNumberMandatory": "Telefone é obrigatório",
+    "nameMandatory": "Nome é obrigatório",
+    "messageMandatory": "Mensagem é obrigatória",
+    "sendEmail": "E-mail enviado com sucesso!",
+    "errorSendEmail": "Erro ao enviar e-mail:"
   }
 }
