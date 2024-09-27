@@ -297,16 +297,16 @@
 
 .carousel-item {
   transition: 0.6s all linear;
-  @apply flex gap-6 left-0 overflow-hidden absolute shrink-0 items-center w-full;
+  @apply flex max-lg:flex-col gap-6 left-0 overflow-hidden absolute shrink-0 items-center w-full;
 }
 
 .carousel-item-info {
-  @apply flex justify-center flex-col order-1 m-auto ml-0 max-w-[50%];
+  @apply flex justify-center flex-col max-lg:items-center max-lg:max-w-full order-1 m-auto ml-0 max-w-[50%];
 }
 
 .carousel-item-image {
   transition: 0.6s all ease-in-out;
-  @apply order-2 self-end relative translate-x-full;
+  @apply order-2 self-end max-lg:self-center relative translate-x-[200%];
 }
 
 .carousel-item-subtitle {
@@ -315,13 +315,13 @@
   opacity: 0;
   visibility: hidden;
   transition: 0.4s all ease-in-out;
-  @apply dark:text-neutral-500 translate-y-1/4 uppercase font-bold text-sm;
+  @apply dark:text-neutral-500 max-lg:text-xs translate-y-1/4 uppercase font-bold text-sm;
 }
 
 .carousel-item-title {
   visibility: hidden;
   transition: 0.6s all ease-in-out;
-  @apply mt-4 translate-y-1/4 text-4xl opacity-0 almarai-bold text-[#2c2c2c] dark:text-[#D7D7D7];
+  @apply mt-4 translate-y-1/4 text-4xl  max-lg:text-3xl opacity-0 almarai-bold text-[#2c2c2c] dark:text-[#D7D7D7];
 }
 
 .carousel-item-description {
@@ -329,7 +329,7 @@
   transition: 0.6s all ease-in-out;
   font-family: "Open Sans", sans-serif;
   line-height: 22px;
-  @apply my-9 mt-4 opacity-0 text-[#5F5F5F] text-xl translate-y-1/4;
+  @apply my-9 mt-4 opacity-0 max-lg:text-lg max-lg:text-center dark:text-[#737373] text-xl translate-y-1/4;
 }
 
 .carousel-item-btn {
@@ -338,7 +338,7 @@
   text-decoration: none;
   visibility: hidden;
   transition: 0.6s all ease-in-out;
-  @apply w-[35%] hover:text-sky-500 dark:hover:text-sky-500 text-[#2c2c2c] dark:text-zinc-400 opacity-0 font-bold uppercase text-lg m-0 translate-y-1/4;
+  @apply w-[35%] max-lg:w-fit hover:text-sky-500 dark:hover:text-sky-500 text-[#2c2c2c] dark:text-zinc-400 opacity-0 font-bold uppercase text-lg m-0 translate-y-1/4;
 }
 
 .carousel-icon {

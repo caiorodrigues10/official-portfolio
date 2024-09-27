@@ -31,7 +31,7 @@ const Carousel = ({ items }: CarouselProps) => {
   };
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between max-lg:h-[700px] max-sm:h-[600px] w-full">
       {items.map((item, index) => (
         <div
           key={index}
@@ -77,18 +77,16 @@ const Carousel = ({ items }: CarouselProps) => {
             </span>
           </div>
           <div className="carousel-item-info">
-            <div>
-              <h2 className="carousel-item-subtitle">{item.subTitle}</h2>
-              <h1 className="carousel-item-title">{item.title}</h1>
-              <p className="carousel-item-description">{item.description}</p>
-              <Link
-                target="_blank"
-                href={item.href}
-                className="carousel-item-btn cursor-pointer"
-              >
-                {t("viewWebsite")}
-              </Link>
-            </div>
+            <h2 className="carousel-item-subtitle">{item.subTitle}</h2>
+            <h1 className="carousel-item-title">{item.title}</h1>
+            <p className="carousel-item-description">{item.description}</p>
+            <Link
+              target="_blank"
+              href={item.href}
+              className="carousel-item-btn cursor-pointer"
+            >
+              {t("viewWebsite")}
+            </Link>
           </div>
         </div>
       ))}

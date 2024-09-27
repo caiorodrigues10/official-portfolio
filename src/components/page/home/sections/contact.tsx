@@ -60,12 +60,12 @@ export default function Contact() {
   };
 
   return (
-    <section className="flex w-full flex-col gap-12 mt-[230px]">
-      <h1 className="text-5xl text-center dark:text-[#D7D7D7] syncopate-bold uppercase">
+    <section className="flex w-full flex-col gap-12 mt-[230px] max-lg:mt-0">
+      <h1 className="text-5xl text-center dark:text-[#D7D7D7] syncopate-bold max-md:text-3xl max-lg:text-4xl max-lg:text-center">
         {t("placeHolderWorkTogether")}
       </h1>
       <form className="flex flex-col gap-6" onSubmit={handleSubmit(sendEmail)}>
-        <div className="flex gap-6 items-center w-full">
+        <div className="flex gap-6 items-center w-full max-md:flex-col">
           <TextInput.Root className="w-full">
             <TextInput.Content>
               <TextInput.Input

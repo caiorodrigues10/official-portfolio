@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col px-40 max-xl:px-12 max-md:px-6 pb-40">
-      <section className="flex w-full gap-12 max-xl:gap-8 pt-32 justify-between max-lg:justify-normal max-md:flex-col">
+      <section className="flex w-full gap-12 max-xl:gap-8 pt-32 justify-between max-lg:justify-normal max-md:flex-col max-lg:pt-12">
         <div className="flex flex-col gap-4 w-1/2 typing-container max-md:w-full">
           <h1 className="text-8xl almarai-extrabold text-focus-in max-lg:text-6xl max-sm:text-4xl">
             CAIO HENRIQUE RODRIGUES
@@ -237,13 +237,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="pt-28" id="about" />
+      <div className="pt-28 max-md:pt-14" id="about" />
       <section className="flex w-full flex-col gap-12">
-        <h1 className="text-5xl dark:text-[#D7D7D7] syncopate-bold">
+        <h1 className="text-5xl dark:text-[#D7D7D7] syncopate-bold max-md:text-3xl max-lg:text-4xl max-lg:text-center">
           {t("aboutTitle")}
         </h1>
-        <div className="flex gap-24 items-start relative">
-          <p className="text-3xl marcellus-regular dark:text-neutral-500">
+        <div className="flex gap-24 items-start relative max-lg:items-center max-lg:flex-col-reverse max-lg:gap-12">
+          <p className="text-3xl max-lg:text-center max-2xl:text-2xl marcellus-regular dark:text-neutral-500">
             {t("aboutMe")}
           </p>
 
@@ -252,41 +252,41 @@ export default function Home() {
             width={700}
             height={200}
             alt=""
-            className="rounded-3xl"
+            className="rounded-3xl max-2xl:w-[400px]"
           />
           <Image
             src={"/paint.svg"}
             width={300}
             height={200}
             alt=""
-            className="absolute top-0 -right-32 -z-10"
+            className="absolute top-0  max-2xl:-right-24  max-2xl:-mt-12 -right-32 -z-10 max-2xl:w-[200px] max-lg:hidden"
           />
           <Image
             src={"/paint.svg"}
             width={300}
             height={200}
             alt=""
-            className="absolute -bottom-24 right-1/4 -z-10"
+            className="absolute -bottom-24 max-2xl:bottom-0 right-1/4 -z-10  max-2xl:w-[200px] max-lg:hidden"
           />
         </div>
       </section>
-      <div id="project" className="pt-32" />
+      <div id="project" className="pt-40 max-md:pt-14" />
       <section className="flex w-full flex-col gap-12 relative">
-        <h1 className="text-5xl text-center dark:text-[#D7D7D7] syncopate-bold">
+        <h1 className="text-5xl text-center dark:text-[#D7D7D7] syncopate-bold max-md:text-3xl max-lg:text-4xl max-lg:text-center">
           {t("project")}
         </h1>
         <Carousel items={itemsCarousel} />
       </section>
-      <div id="contact" className="mt-[230px]" />
+      <div id="contact" className="mt-[230px] max-lg:mt-0 max-lg:pt-12" />
       <Contact />
 
-      <footer className="flex w-full gap-12 mt-32">
+      <footer className="flex w-full gap-12">
         <div className="absolute left-0 right-0 bg-[#0068FF]">
-          <div className="flex w-full h-16 bg-white dark:bg-[#110f0f] rounded-b-full absolute left-0 right-0" />
+          <div className="flex w-full h-16 bg-white dark:bg-[#110f0f] rounded-b-full absolute left-0 right-0 max-xl:rounded-b-3xl" />
           <div className="flex px-40 max-xl:px-12 max-md:px-6 pt-32 pb-40 justify-around text-white">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 max-lg:gap-6">
               <p className="marcellus-regular">{t("social")}</p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 max-lg:flex-col max-lg:gap-0">
                 <Link
                   href={
                     "https://www.linkedin.com/in/caio-henrique-rodrigues-9b155916b/"
@@ -316,7 +316,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 max-lg:gap-6">
               <p className="marcellus-regular">{t("usefulLinks")}</p>
               <ClientOnly>
                 <FooterUsefulLinks items={itemsLink} />
