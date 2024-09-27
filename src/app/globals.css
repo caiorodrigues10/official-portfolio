@@ -56,22 +56,22 @@
     src: url(/fonts/Gruppo-Regular.ttf);
   }
   @font-face {
-    font-family: "Benchnine";
+    font-family: "BenchNine";
     font-style: normal;
     font-weight: 300;
-    src: url(/fonts/Benchnine-Light.ttf);
+    src: url(/fonts/BenchNine-Light.ttf);
   }
   @font-face {
-    font-family: "Benchnine";
+    font-family: "BenchNine";
     font-style: normal;
     font-weight: 400;
-    src: url(/fonts/Benchnine-Regular.ttf);
+    src: url(/fonts/BenchNine-Regular.ttf);
   }
   @font-face {
-    font-family: "Benchnine";
+    font-family: "BenchNine";
     font-style: normal;
     font-weight: 600;
-    src: url(/fonts/Benchnine-Bold.ttf);
+    src: url(/fonts/BenchNine-Bold.ttf);
   }
   @font-face {
     font-family: "Syncopate";
@@ -122,19 +122,19 @@
 }
 
 .benchnine-light {
-  font-family: "Benchnine", sans-serif;
+  font-family: "BenchNine", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
 .benchnine-regular {
-  font-family: "Benchnine", sans-serif;
+  font-family: "BenchNine", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .benchnine-bold {
-  font-family: "Benchnine", sans-serif;
+  font-family: "BenchNine", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
