@@ -41,7 +41,7 @@ export default function Contact() {
         process.env.NEXT_PUBLIC_TEMPLATE_ID || "",
         {
           from_name: data.name,
-          message: "Olá, gostaria de fazer uma proposta",
+          message: data.message,
           reply_to: "caio.henrique.rodrigues10@gmail.com",
         },
         process.env.NEXT_PUBLIC_USER_ID || ""
